@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+<!-- 	<context:component-scan base-package="fmoonblue.spring.polymorphism">	
+	</context:component-scan> -->
+
+<!-- 	<bean id="sony" class="fmoonblue.spring.polymorphism.SonySpeaker"/>
+	
+제어권 넘기기
+   <bean id = "tv" class ="fmoonblue.spring.polymorphism.SamsungTV" p:speaker-ref="sony" p:price="2800000" />
+   	<constructor-arg index="1" value="3200000"></constructor-arg>
+  
+   생성자에 매개변수로 넣을 것. class 넣을 때는 ref(ref에는 결국 소니 스피커가 들어감)
+   	<constructor-arg index="0" ref="apple"></constructor-arg>
+    <constructor-arg><value>5200000</value></constructor-arg>
+    
+    	<property name="speaker" ref="apple"></property>
+    	<property name="price" value="2500000"></property>
+   
+   <bean id ="sony" class="fmoonblue.spring.polymorphism.SonySpeaker"></bean>
+   <bean id ="apple" class="fmoonblue.spring.polymorphism.AppleSpeaker"></bean>
+   
+   lazy-init ="true"
+  scope="singleton" or scope="prototype"
+    init-method="start" destroy-method="stop"
+   <bean id ="lgTV" class="fmoonblue.spring.polymorphism.lgTV"/>
+ 
+ <bean id="collectionBean" class="fmoonblue.spring.collection.CollectionBean">
+ 	<property name="addressList">
+ 	
+ 	list
+ 	<list>
+ 		<value>서울시 서초구 서초동</value>
+ 		<value>서울시 서대문구 홍은동</value>
+ 		<value>서울시 서대문구 홍은동</value>
+ 		<value>서울시 서대문구 홍은동</value>
+	</list>
+ 	 
+ 	
+ 	 map
+ 	<map>
+ 		<entry>
+ 			<key><value>홍길동</value></key>
+ 			<value>율도국</value>
+ 		</entry>
+ 		<entry>
+ 			<key><value>손오공</value></key>
+ 			<value>화과산</value>
+ 		</entry>
+ 		</map>
+ 		
+ 	 properties
+ 		<props>
+ 		<prop key="홍길동">율도국</prop>
+ 		<prop key="손오공">화과산</prop>
+ 		</props>
+ 		
+ 		
+ 	 set	
+ 	<set value-type="java.lang.String">
+ 		<value>서울시 종로구 묘동</value>
+ 		<value>서울시 동대문구 장안동</value>
+ 		<value>서울시 서초구 서초동</value>
+ 		<value>서울시 서초구 서초동</value>
+ 		<value>서울시 서초구 서초동</value>
+ 	</set>
+ 	</property>
+ </bean> -->
+<!--  <bean id="myLifeBean" class="fmoonblue.spring.lifecycle.MyLifeBeanImpl" init-method="init">
+ 	<property name="greeting"><value>Hello, </value></property>
+ </bean>
+ <bean class="fmoonblue.spring.lifecycle.CustomBeanPostProcessor" /> 
+-->
+<!-- 	<bean id="userDAO" class="fmoonblue.spring.web.user.impl.UserDAO"></bean>
+	 <bean id="userService" class="fmoonblue.spring.web.user.impl.UserServiceImpl"> <property name="userDAO" ref="userDAO" /></bean>
+	<bean id="log" class="fmoonblue.spring.web.common.Log4jAdvice">
+	</bean>
+	<bean id="before" class="fmoonblue.spring.web.common.BeforeAdvice"></bean>
+	<bean id="afterReturning"
+		class="fmoonblue.spring.web.common.AfterReturningAdvice"></bean>
+	<bean id="afterThrowing"
+		class="fmoonblue.spring.web.common.AfterThrowingAdvice"></bean>
+	<bean id="after" class="fmoonblue.spring.web.common.AfterAdvice"></bean>
+	<bean id="around" class="fmoonblue.spring.web.common.AroundAdvice"></bean>
+	<bean id="afterReturning" class="fmoonblue.spring.web.common.AfterReturningAdvice"></bean> -->
+		<!--
+			<aop:aspect ref="log"> <aop:before method="printLog" 
+			pointcut-ref="allPointcut" /> <aop:aspect ref="before"> <aop:before method="beforeLog" 
+			pointcut-ref="allPointcut" /> -->
+		<!-- <aop:aspect ref="afterReturning"> <aop:after-returning method="afterLog" 
+			pointcut-ref="getPointcut" /> 
+		<aop:aspect ref="afterThrowing">
+			<aop:after-throwing method="exceptionLog"
+				pointcut-ref="allPointcut" />
+		</aop:aspect>
+		<aop:aspect ref="after">
+			<aop:after method="finallyLog" pointcut-ref="allPointcut" />
+		</aop:aspect> 
+		<aop:aspect ref="around">
+			<aop:around method="aroundLog" pointcut-ref="allPointcut"/> 
+		</aop:aspect> -->
+		
+<!-- 	<aop:config> -->
+	 <!-- <aop:pointcut expression="execution(* fmoonblue.spring.web..*Impl.*(..))" 
+		id="allPointcut" />  -->
+		<!-- <aop:pointcut
+			expression="execution(* fmoonblue.spring.web..*Impl.get*(..))"
+			id="getPointcut" /> --> 
+		<!-- <aop:pointcut
+			expression="execution(* fmoonblue.spring.web..*Impl.*(..))"
+			id="allPointcut" /> -->
+		<!-- <aop:aspect ref="before">
+			<aop:around method="beforeLog" pointcut-ref="getPointcut" />
+		</aop:aspect> -->
+	<!-- 	<aop:aspect ref="afterReturning">
+			<aop:after-returning method="afterLog" pointcut-ref="getPointcut" returning="returnObj"/>
+		</aop:aspect> 
+		<aop:aspect ref="afterThrowing">
+			<aop:after-throwing method="exceptionLog" pointcut-ref="allPointcut" throwing="e"/>
+		</aop:aspect> -->
+	<!-- 	<aop:aspect ref="around">
+			<aop:around method="aroundLog" pointcut-ref="getPointcut"/>
+		</aop:aspect> -->
+<!-- 	</aop:config> -->
+	<context:component-scan base-package="fmoonblue.spring.web">
+	</context:component-scan>
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	<context:property-placeholder location="classpath:config/database.properties"/>
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"> 
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="get*" read-only="true"/>
+			<tx:method name="*"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	<aop:config>
+		<aop:pointcut expression="execution(* fmoonblue.spring.web..*(..))" id="txPointcut"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>
+	</aop:config>
+</beans>
